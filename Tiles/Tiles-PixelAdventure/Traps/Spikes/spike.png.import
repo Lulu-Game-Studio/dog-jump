@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhmig7gi4wk86"
-path="res://.godot/imported/sin_titulo.png-cc3ddc8687ce2f2dc36cafd494878779.ctex"
+uid="uid://bbrj4cual1gq2"
+path="res://.godot/imported/spike.png-9c6c27c484ab27d03bad3a7a63ae61c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tiles/Tiles-PixelAdventure/Traps/Spikes/sin_titulo.png"
-dest_files=["res://.godot/imported/sin_titulo.png-cc3ddc8687ce2f2dc36cafd494878779.ctex"]
+source_file="res://Tiles/Tiles-PixelAdventure/Traps/Spikes/spike.png"
+dest_files=["res://.godot/imported/spike.png-9c6c27c484ab27d03bad3a7a63ae61c3.ctex"]
 
 [params]
 

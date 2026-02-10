@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ber14duormt3a"
-path="res://.godot/imported/4148006.jpg-2452f6c29022434b5dfc68a3b7ab8170.ctex"
+path="res://.godot/imported/Clouds.jpg-962e204c8ff42f66f0c76d61ad678542.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tiles/Fondo/4148006.jpg"
-dest_files=["res://.godot/imported/4148006.jpg-2452f6c29022434b5dfc68a3b7ab8170.ctex"]
+source_file="res://Tiles/Background/Clouds.jpg"
+dest_files=["res://.godot/imported/Clouds.jpg-962e204c8ff42f66f0c76d61ad678542.ctex"]
 
 [params]
 
