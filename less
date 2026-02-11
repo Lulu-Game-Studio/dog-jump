@@ -1,0 +1,211 @@
+[1mdiff --git a/README.md b/README.md[m
+[1mindex 5a93cea..011bea3 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -1,92 +1,98 @@[m
+[31m-# Dog Platformer 🐶🎮[m
+[32m+[m[32m# 🐶🎮 Dog Platformer[m
+ [m
+[31m-Dog Platformer es un juego de **plataformas 2D** donde controlas a un perro que salta entre plataformas, recoge monedas y se enfrenta a enemigos hasta llegar al jefe final, un gato naranja. 🐱[m
+[32m+[m[32m**Dog Platformer** is a **2D platformer** game where you control a dog that jumps between platforms, collects coins, and faces enemies until reaching the final boss — an orange cat. 🐱[m
+ [m
+[31m-## Características principales ⭐[m
+[32m+[m[32m---[m
+ [m
+[31m-- Plataformas 2D estilo clásico, con mapa lineal de inicio a fin.[m
+[31m-- Jugabilidad inspirada en los platformers tipo Mario.[m
+[31m-- Sistema de vidas, trampas y recolectables.[m
+[31m-- Escenas de interfaz básicas: pausa, opciones, victoria y derrota.[m
+[32m+[m[32m## ⭐ Main Features[m
+ [m
+[31m-## Mecánicas de juego 🕹️[m
+[32m+[m[32m- Classic-style **2D platforms** with a linear map from start to finish.[m[41m  [m
+[32m+[m[32m- Gameplay inspired by **classic platformers like Mario**.[m[41m  [m
+[32m+[m[32m- **Life system**, traps, and collectibles.[m[41m  [m
+[32m+[m[32m- Basic user interface scenes: **pause**, **options**, **victory**, and **defeat**.[m
+ [m
+[31m-- El perro puede **saltar** para avanzar por el nivel y subirse a plataformas.[m
+[31m-- Puede **matar enemigos saltando encima de ellos**.[m
+[31m-- El jefe (gato) recibe daño cuando el jugador le salta en la cabeza; necesita 3 golpes para ser derrotado.[m
+[31m-- El jugador tiene **3 vidas** ❤️; al recibir 3 golpes pierde la partida.[m
+[31m-- Trampas:[m
+[31m-  - Huecos al vacío que matan instantáneamente.[m
+[31m-  - Pinchos y sierras que quitan 1 vida.[m
+[31m-- Monedas:[m
+[31m-  - Al recoger cierta cantidad de monedas (ejemplo: 100) el jugador recupera 1 punto de vida. 🪙[m
+[31m-  - Las monedas podrían usarse más adelante para comprar skins para el perro.[m
+[32m+[m[32m---[m
+ [m
+[31m-## Interfaz de usuario 🧩[m
+[32m+[m[32m## 🕹️ Gameplay Mechanics[m
+ [m
+[31m-Elementos visibles durante la partida:[m
+[32m+[m[32m- The dog can **jump** to move through the level and reach platforms.[m[41m  [m
+[32m+[m[32m- It can **defeat enemies by jumping on their heads**.[m[41m  [m
+[32m+[m[32m- The **boss (cat)** takes damage when the player jumps on its head and needs **3 hits** to be defeated.[m[41m  [m
+[32m+[m[32m- The player has **3 lives** ❤️. After taking 3 hits, the game is lost.[m[41m  [m
+ [m
+[31m-- Contador de **monedas** recogidas. 🪙[m
+[31m-- Indicador de **vidas** restantes. ❤️[m
+[32m+[m[32m**Traps**[m
+[32m+[m[32m- Pits that cause instant death.[m[41m  [m
+[32m+[m[32m- Spikes and saws that reduce 1 life.[m[41m  [m
+ [m
+[31m-Escenas de interfaz implementadas:[m
+[32m+[m[32m**Coins**[m
+[32m+[m[32m- Collecting **100 coins** restores 1 life point. 🪙[m[41m  [m
+[32m+[m[32m- Coins could later be used to **buy skins** for the dog.[m
+ [m
+[31m-- `pause.tscn` – Menú de pausa ⏸️.[m
+[31m-- `options.tscn` – Opciones (volumen general, pantalla completa y botón Back) ⚙️.[m
+[31m-- `winner.tscn` – Pantalla de victoria con botón de siguiente nivel y volver al menú 🏆.[m
+[31m-- `loser.tscn` – Pantalla de derrota con botones de reintentar y volver al menú 💀.[m
+[32m+[m[32m---[m
+ [m
+[31m-## Enemigos 👾[m
+[32m+[m[32m## 🧩 User Interface[m
+ [m
+[31m-- Enemigos básicos:[m
+[31m-  - Rana.[m
+[31m-  - Zorro.[m
+[31m-- Jefe:[m
+[31m-  - Gato naranja con 3 vidas, al que se le hace daño saltando en la cabeza. 😼[m
+[32m+[m[32m**Visible elements during gameplay**[m
+[32m+[m[32m- **Coin counter** 🪙[m[41m  [m
+[32m+[m[32m- **Lives indicator** ❤️[m[41m  [m
+ [m
+[31m-## Animaciones del personaje 🎞️[m
+[32m+[m[32m**Implemented UI scenes**[m
+[32m+[m[32m- `pause.tscn` – Pause menu ⏸️[m[41m  [m
+[32m+[m[32m- `options.tscn` – Options (master volume, fullscreen, and Back button) ⚙️[m[41m  [m
+[32m+[m[32m- `winner.tscn` – Victory screen with Next Level and Return to Menu buttons 🏆[m[41m  [m
+[32m+[m[32m- `loser.tscn` – Defeat screen with Retry and Return to Menu buttons 💀[m[41m  [m
+ [m
+[31m-El perro cuenta con:[m
+[32m+[m[32m---[m
+ [m
+[31m-- Animación **Idle**, alternando entre cagar y ladrar mientras está quieto.[m
+[31m-- Animación de **caminar** para moverse por el mapa.[m
+[31m-- Animación de **saltar** para avanzar y atacar enemigos.[m
+[32m+[m[32m## 👾 Enemies[m
+ [m
+[31m-## Recursos gráficos y de sonido 📦🎵[m
+[32m+[m[32m**Basic enemies**[m
+[32m+[m[32m- Frog[m[41m  [m
+[32m+[m[32m- Fox[m[41m  [m
+ [m
+[31m-Recursos previstos (sujetos a cambios):[m
+[32m+[m[32m**Boss**[m
+[32m+[m[32m- Orange cat with **3 lives**, takes damage when jumped on 😼[m[41m  [m
+ [m
+[31m-- Personajes y enemigos:[m
+[31m-  - Frogs Pixel Asset Pack – Pop Shop Packs  [m
+[31m-	https://pop-shop-packs.itch.io/frogs-pixel-asset-pack[m
+[31m-  - Cats Pixel Asset Pack – Pop Shop Packs  [m
+[31m-	https://pop-shop-packs.itch.io/cats-pixel-asset-pack[m
+[31m-  - 2D Pixel Art Fox Sprites – Elthen  [m
+[31m-	https://elthen.itch.io/2d-pixel-art-fox-sprites[m
+[32m+[m[32m---[m
+ [m
+[31m-- Tilesets y escenarios:[m
+[31m-  - Treasure Hunters – Pixel Frog  [m
+[31m-	https://pixelfrog-assets.itch.io/treasure-hunters[m
+[31m-  - Brackeys Platformer Bundle – Brackeys Games  [m
+[31m-	https://brackeysgames.itch.io/brackeys-platformer-bundle[m
+[31m-  - Pixel Adventure 1 – Pixel Frog  [m
+[31m-	https://pixelfrog-assets.itch.io/pixel-adventure-1[m
+[31m-  - Pixel Platformer – Kenney  [m
+[31m-	https://kenney-assets.itch.io/pixel-platformer[m
+[32m+[m[32m## 🎞️ Character Animations[m
+ [m
+[31m-- Sonido / música:[m
+[31m-  - Pista de música principal (Mureka)  [m
+[31m-	https://www.mureka.ai/song-detail/PMXyW9MFANUs5W9SqRiDqr?is_from_share=1[m
+[32m+[m[32mThe dog includes:[m
+[32m+[m[32m- **Idle** animation, alternating between pooping and barking while standing still.[m[41m  [m
+[32m+[m[32m- **Walk** animation to move across the map.[m[41m  [m
+[32m+[m[32m- **Jump** animation to progress and attack enemies.[m[41m  [m
+ [m
+[31m-Revisar las licencias de cada asset antes de publicar el juego. ✅[m
+[32m+[m[32m---[m
+ [m
+[31m-## Estado del proyecto 🚧[m
+[32m+[m[32m## 📦🎵 Art and Sound Resources[m
+ [m
+[31m-Proyecto en desarrollo inicial:[m
+[32m+[m[32m**Characters and enemies**[m
+[32m+[m[32m- [Frogs Pixel Asset Pack – Pop Shop Packs](https://pop-shop-packs.itch.io/frogs-pixel-asset-pack)[m[41m  [m
+[32m+[m[32m- [Cats Pixel Asset Pack – Pop Shop Packs](https://pop-shop-packs.itch.io/cats-pixel-asset-pack)[m[41m  [m
+[32m+[m[32m- [2D Pixel Art Fox Sprites – Elthen](https://elthen.itch.io/2d-pixel-art-fox-sprites)[m
+ [m
+[31m-- Motor: Godot 4.[m
+[31m-- Implementadas escenas de menú (pausa, opciones, victoria, derrota).[m
+[31m-- Pendiente:[m
+[31m-  - Diseñar los niveles.[m
+[31m-  - Implementar todos los enemigos y el jefe.[m
+[31m-  - Sistema completo de monedas, vidas y skins.[m
+[32m+[m[32m**Tilesets and environments**[m
+[32m+[m[32m- [Treasure Hunters – Pixel Frog](https://pixelfrog-assets.itch.io/treasure-hunters)[m[41m  [m
+[32m+[m[32m- [Brackeys Platformer Bundle – Brackeys Games](https://brackeysgames.itch.io/brackeys-platformer-bundle)[m[41m  [m
+[32m+[m[32m- [Pixel Adventure 1 – Pixel Frog](https://pixelfrog-assets.itch.io/pixel-adventure-1)[m[41m  [m
+[32m+[m[32m- [Pixel Platformer – Kenney](https://kenney-assets.itch.io/pixel-platformer)[m
+[32m+[m
+[32m+[m[32m**Sound and music**[m
+[32m+[m[32m- [Main music track (Mureka)](https://www.mureka.ai/song-detail/PMXyW9MFANUs5W9SqRiDqr?is_from_share=1)[m
+[32m+[m
+[32m+[m[32m> ✅ Make sure to review each asset license before publishing the game.[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## 🚧 Project Status[m
+[32m+[m
+[32m+[m[32m**Current phase**[m
+[32m+[m[32m- Engine: **Godot 4**[m[41m  [m
+[32m+[m[32m- Implemented: Menu scenes (Pause, Options, Victory, Defeat)[m[41m  [m
+[32m+[m
+[32m+[m[32m**Pending**[m
+[32m+[m[32m- Level design[m[41m  [m
+[32m+[m[32m- Implementation of all enemies and the boss[m[41m  [m
+[32m+[m[32m- Complete coin, life, and skin system[m[41m  [m
+[32m+[m
+[32m+[m[32m---[m
+[1mdiff --git a/scenes/ui/Background/Background.tscn b/scenes/ui/Background/Background.tscn[m
+[1mindex cd9bec2..6c266a7 100644[m
+[1m--- a/scenes/ui/Background/Background.tscn[m
+[1m+++ b/scenes/ui/Background/Background.tscn[m
+[36m@@ -260,7 +260,7 @@[m [mtracks/0/keys = {[m
+ "times": PackedFloat32Array(0),[m
+ "transitions": PackedFloat32Array(1),[m
+ "update": 0,[m
+[31m-"values": [Vector2(0, -10)][m
+[32m+[m[32m"values": [Vector2(639, 379)][m
+ }[m
+ [m
+ [sub_resource type="Animation" id="Animation_jsf13"][m
+[36m@@ -288,12 +288,11 @@[m [m_data = {[m
+ [m
+ [node name="Background" type="AnimatedSprite2D" unique_id=1340641396][m
+ texture_filter = 1[m
+[31m-position = Vector2(0, -10)[m
+[32m+[m[32mposition = Vector2(639, 379)[m
+ scale = Vector2(1.0697116, 1.03125)[m
+ sprite_frames = SubResource("SpriteFrames_cnfrm")[m
+ autoplay = "default"[m
+[31m-frame = 20[m
+[31m-frame_progress = 0.9526198[m
+[32m+[m[32mframe_progress = 0.11325971[m
+ [m
+ [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=672795231][m
+ libraries/ = SubResource("AnimationLibrary_qu42d")[m
+[1mdiff --git a/scenes/ui/options/options.gd b/scenes/ui/options/options.gd[m
+[1mindex 02bb85d..37f95af 100644[m
+[1m--- a/scenes/ui/options/options.gd[m
+[1m+++ b/scenes/ui/options/options.gd[m
+[36m@@ -5,7 +5,6 @@[m [mextends Control[m
+ var is_fullscreen: bool = false[m
+ [m
+ func _ready() -> void:[m
+[31m-	# Detectar estado real al abrir Options[m
+ 	var current_mode := DisplayServer.window_get_mode()[m
+ 	is_fullscreen = current_mode == DisplayServer.WINDOW_MODE_FULLSCREEN[m
+ [m

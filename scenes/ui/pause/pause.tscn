@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://b1s5k74xi6hri"]
+[gd_scene format=3 uid="uid://cq41r6jrrcoy5"]
+
+[ext_resource type="FontFile" uid="uid://dxe7owqfwqgt3" path="res://letter/ARCADECLASSIC.TTF" id="1_p8xvd"]
 
 [node name="Pause" type="Control" unique_id=1919460839]
 layout_mode = 3
@@ -22,10 +24,14 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_bottom = -449.0
+offset_left = 1.0
+offset_top = 56.0
+offset_right = 1.0
+offset_bottom = -387.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 100
+theme_override_fonts/font = ExtResource("1_p8xvd")
+theme_override_font_sizes/font_size = 200
 text = "Paused"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -35,10 +41,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 448.0
-offset_top = 367.0
-offset_right = -421.0
-offset_bottom = -148.0
+offset_left = 414.0
+offset_top = 287.0
+offset_right = -438.0
+offset_bottom = -141.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -46,16 +52,21 @@ theme_override_constants/separation = 20
 [node name="ResumeButton" type="Button" parent="Buttons" unique_id=1116096431]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_p8xvd")
+theme_override_font_sizes/font_size = 50
 text = "Resume"
 
 [node name="OptionsButton" type="Button" parent="Buttons" unique_id=669895330]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("1_p8xvd")
+theme_override_font_sizes/font_size = 50
 text = "Options"
 
 [node name="ReturnButton" type="Button" parent="Buttons" unique_id=1153694418]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
-text = "Return to Main Menu
-
+theme_override_fonts/font = ExtResource("1_p8xvd")
+theme_override_font_sizes/font_size = 50
+text = "menu
 "
