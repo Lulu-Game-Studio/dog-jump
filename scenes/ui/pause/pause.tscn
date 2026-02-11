@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cq41r6jrrcoy5"]
+
+[ext_resource type="FontFile" uid="uid://dxe7owqfwqgt3" path="res://letter/ARCADECLASSIC.TTF" id="1_p8xvd"]
+
+[node name="Pause" type="Control" unique_id=1919460839]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="." unique_id=1454485414]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5)
+
+[node name="TitleLabel" type="Label" parent="." unique_id=431346481]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 56.0
+offset_right = 1.0
+offset_bottom = -387.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_p8xvd")
+theme_override_font_sizes/font_size = 200
+text = "Paused"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="." unique_id=1768750657]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 414.0
+offset_top = 287.0
+offset_right = -438.0
+offset_bottom = -141.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="ResumeButton" type="Button" parent="Buttons" unique_id=1116096431]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_p8xvd")
+theme_override_font_sizes/font_size = 50
+text = "Resume"
+
+[node name="OptionsButton" type="Button" parent="Buttons" unique_id=669895330]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_p8xvd")
+theme_override_font_sizes/font_size = 50
+text = "Options"
+
+[node name="ReturnButton" type="Button" parent="Buttons" unique_id=1153694418]
+custom_minimum_size = Vector2(300, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_p8xvd")
+theme_override_font_sizes/font_size = 50
+text = "menu
+"
