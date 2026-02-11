@@ -260,7 +260,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, -10)]
+"values": [Vector2(639, 379)]
 }
 
 [sub_resource type="Animation" id="Animation_jsf13"]
@@ -288,12 +288,11 @@ _data = {
 
 [node name="Background" type="AnimatedSprite2D" unique_id=1340641396]
 texture_filter = 1
-position = Vector2(0, -10)
+position = Vector2(639, 379)
 scale = Vector2(1.0697116, 1.03125)
 sprite_frames = SubResource("SpriteFrames_cnfrm")
 autoplay = "default"
-frame = 20
-frame_progress = 0.9526198
+frame_progress = 0.11325971
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=672795231]
 libraries/ = SubResource("AnimationLibrary_qu42d")

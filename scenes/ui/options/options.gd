@@ -5,7 +5,6 @@ extends Control
 var is_fullscreen: bool = false
 
 func _ready() -> void:
-	# Detectar estado real al abrir Options
 	var current_mode := DisplayServer.window_get_mode()
 	is_fullscreen = current_mode == DisplayServer.WINDOW_MODE_FULLSCREEN
 
