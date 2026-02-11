@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://fp2888ntar02"]
 
+[ext_resource type="PackedScene" uid="uid://cdaifmewx80m6" path="res://scenes/ui/Background/Background.tscn" id="1_rf3b5"]
+
 [node name="LevelSelect" type="Node2D" unique_id=275422233]
+
+[node name="Background" parent="." unique_id=1340641396 instance=ExtResource("1_rf3b5")]
