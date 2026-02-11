@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bicta3vfxgvmn"]
 
+[ext_resource type="Script" uid="uid://bywgq4j7xawwc" path="res://scenes/ui/options/options.gd" id="1_7u8vf"]
 [ext_resource type="FontFile" uid="uid://dxe7owqfwqgt3" path="res://letter/ARCADECLASSIC.TTF" id="1_q4hk7"]
 [ext_resource type="Texture2D" uid="uid://dfr4i57hlm1vq" path="res://scenes/ui/options/sound.png" id="2_3hhku"]
+[ext_resource type="PackedScene" uid="uid://cdaifmewx80m6" path="res://scenes/ui/Background/Background.tscn" id="2_gmey6"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_3hhku"]
 color = Color(1, 1, 1, 1)
@@ -18,45 +20,41 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7u8vf")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1454485414]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.5)
+[node name="Background" parent="." unique_id=1340641396 instance=ExtResource("2_gmey6")]
 
 [node name="TitleLabel" type="Label" parent="." unique_id=431346481]
+texture_filter = 1
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 56.0
-offset_right = 1.0
-offset_bottom = -387.0
+anchors_preset = -1
+anchor_left = 0.00086805556
+anchor_top = 0.086419754
+anchor_right = 1.0008681
+anchor_bottom = 0.4027778
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_q4hk7")
 theme_override_font_sizes/font_size = 200
 text = "Options"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="BoxOptions" type="VBoxContainer" parent="." unique_id=1768750657]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 345.0
-offset_top = 304.0
-offset_right = -354.0
-offset_bottom = -124.0
+anchors_preset = -1
+anchor_left = 0.29947916
+anchor_top = 0.46141976
+anchor_right = 0.6927083
+anchor_bottom = 0.8634259
+offset_top = 2.5
+offset_bottom = -2.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
+metadata/_edit_use_anchors_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="BoxOptions" unique_id=149438372]
 layout_mode = 2
@@ -86,8 +84,11 @@ theme_override_font_sizes/font_size = 50
 text = "Fullscreen : off"
 
 [node name="BackButton" type="Button" parent="BoxOptions" unique_id=1153694418]
-custom_minimum_size = Vector2(300, 60)
+custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_q4hk7")
 theme_override_font_sizes/font_size = 50
 text = "Back "
+
+[connection signal="pressed" from="BoxOptions/FullScreenButton" to="." method="_on_full_screen_button_pressed"]
+[connection signal="pressed" from="BoxOptions/BackButton" to="." method="_on_back_button_pressed"]
