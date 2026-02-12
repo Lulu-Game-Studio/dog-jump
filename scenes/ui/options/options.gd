@@ -19,6 +19,7 @@ func _on_full_screen_button_pressed() -> void:
 	is_fullscreen = !is_fullscreen
 	if is_fullscreen:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		DisplayServer.window_set_size(DisplayServer.screen_get_size())
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	_update_fullscreen_text()
