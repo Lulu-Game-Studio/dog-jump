@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b1s5k74xi6hri"]
 
 [ext_resource type="FontFile" uid="uid://dxe7owqfwqgt3" path="res://letter/ARCADECLASSIC.TTF" id="1_p8xvd"]
+[ext_resource type="Script" uid="uid://di3h600gldea3" path="res://scenes/ui/loser/loser.gd" id="1_ykk8s"]
 
 [node name="Loser" type="Control" unique_id=1919460839]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ykk8s")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1454485414]
 layout_mode = 1
@@ -41,10 +43,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 414.0
-offset_top = 304.0
-offset_right = -438.0
-offset_bottom = -124.0
+offset_left = 419.0
+offset_top = 352.0
+offset_right = -433.0
+offset_bottom = -76.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20

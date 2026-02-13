@@ -1,11 +1,12 @@
 [gd_scene format=4 uid="uid://c41jn0dy6ffd"]
 
+[ext_resource type="Script" uid="uid://c241yd5ri56ev" path="res://scenes/levels/level.gd" id="1_dj4wq"]
 [ext_resource type="Texture2D" uid="uid://bh73h43ljdibt" path="res://Tiles/Background/Sunset.jpg" id="1_niitk"]
-[ext_resource type="Texture2D" uid="uid://dtyt83pext6bq" path="res://Tiles/Tiles-PixelAdventure/Terrain/Terrain (16x16).png" id="2_d5djh"]
-[ext_resource type="Texture2D" uid="uid://bbrj4cual1gq2" path="res://Tiles/Tiles-PixelAdventure/Traps/Spikes/spike.png" id="3_ok6xr"]
-[ext_resource type="Texture2D" uid="uid://b4po8eq45lvdf" path="res://Tiles/Tiles-PixelAdventure/Other/Shadow.png" id="4_dj4wq"]
-[ext_resource type="PackedScene" uid="uid://2ahm3b3i74v" path="res://Sprites/fox.tscn" id="5_ok6xr"]
-[ext_resource type="PackedScene" uid="uid://dmki6nwadlyxa" path="res://Sprites/frog.tscn" id="6_dj4wq"]
+[ext_resource type="Texture2D" uid="uid://dtyt83pext6bq" path="res://Tiles/Terrain/Terrain (16x16).png" id="2_d5djh"]
+[ext_resource type="Texture2D" uid="uid://bbrj4cual1gq2" path="res://Tiles/Traps/Spikes/spike.png" id="3_ok6xr"]
+[ext_resource type="Texture2D" uid="uid://b4po8eq45lvdf" path="res://Tiles/Other/Shadow.png" id="4_dj4wq"]
+[ext_resource type="PackedScene" uid="uid://2ahm3b3i74v" path="res://Sprites/fox/fox.tscn" id="5_ok6xr"]
+[ext_resource type="PackedScene" uid="uid://dmki6nwadlyxa" path="res://Sprites/frog/frog.tscn" id="6_dj4wq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kbehb"]
 texture = ExtResource("2_d5djh")
@@ -209,6 +210,9 @@ size = Vector2(31, 16)
 size = Vector2(110, 17)
 
 [node name="Map_level2" type="Node2D" unique_id=511310519]
+script = ExtResource("1_dj4wq")
+level_id = "level2"
+next_level = "res://scenes/levels/level3.tscn"
 
 [node name="Sunset" type="Sprite2D" parent="." unique_id=80733596]
 position = Vector2(1144, 323)

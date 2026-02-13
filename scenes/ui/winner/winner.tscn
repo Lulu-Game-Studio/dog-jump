@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b8ltechdmqr3c"]
 
 [ext_resource type="FontFile" uid="uid://dxe7owqfwqgt3" path="res://letter/ARCADECLASSIC.TTF" id="1_2drh3"]
+[ext_resource type="Script" uid="uid://ciwb2r3uo2mri" path="res://scenes/ui/winner/winner.gd" id="1_i6ioy"]
 
 [node name="Winner" type="Control" unique_id=1919460839]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_i6ioy")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1454485414]
 layout_mode = 1
