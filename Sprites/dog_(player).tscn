@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bgbqmedvq5ka"]
 
 [ext_resource type="Texture2D" uid="uid://cyea772qjnc3p" path="res://Sprites/barksprite with lines.png" id="1_k142p"]
+[ext_resource type="Script" uid="uid://bt5dlj7hiqlpc" path="res://Sprites/dog_(player).gd" id="1_u2n4h"]
 [ext_resource type="Texture2D" uid="uid://bungkw44lkgu2" path="res://Sprites/idlesprite.png" id="2_rwgg1"]
 [ext_resource type="Texture2D" uid="uid://dutrb63w7tpc1" path="res://Sprites/poopsprite.png" id="3_rwgg1"]
 [ext_resource type="Texture2D" uid="uid://bd0w6hchcniqp" path="res://Sprites/walksprite.png" id="4_kcds5"]
@@ -232,18 +233,28 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcds5"]
-size = Vector2(66, 52)
+size = Vector2(32, 25)
 
-[node name="Dog (player)" type="Node2D" unique_id=161018750]
+[node name="Dog (player)" type="CharacterBody2D" unique_id=241278315]
+script = ExtResource("1_u2n4h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1812755998]
-position = Vector2(-5.9604645e-08, -5)
-scale = Vector2(0.4375, 0.484375)
+position = Vector2(1, -0.9999981)
+scale = Vector2(0.23046875, 0.2578125)
 sprite_frames = SubResource("SpriteFrames_dq5mi")
-animation = &"Walk"
-frame = 1
-frame_progress = 0.23770593
+animation = &"Bark"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=525133283]
-position = Vector2(0, -2)
+position = Vector2(1, 1.5)
 shape = SubResource("RectangleShape2D_kcds5")
+
+[node name="RayCast2D" type="RayCast2D" parent="CollisionShape2D" unique_id=774939483]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=47099217]
+position = Vector2(-5, 11)
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = 0
+limit_right = 2300
+limit_bottom = 660
+limit_smoothed = true
