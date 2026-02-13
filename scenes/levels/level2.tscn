@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dtyt83pext6bq" path="res://Tiles/Tiles-PixelAdventure/Terrain/Terrain (16x16).png" id="2_d5djh"]
 [ext_resource type="Texture2D" uid="uid://bbrj4cual1gq2" path="res://Tiles/Tiles-PixelAdventure/Traps/Spikes/spike.png" id="3_ok6xr"]
 [ext_resource type="Texture2D" uid="uid://b4po8eq45lvdf" path="res://Tiles/Tiles-PixelAdventure/Other/Shadow.png" id="4_dj4wq"]
+[ext_resource type="PackedScene" uid="uid://2ahm3b3i74v" path="res://Sprites/fox.tscn" id="5_ok6xr"]
+[ext_resource type="PackedScene" uid="uid://dmki6nwadlyxa" path="res://Sprites/frog.tscn" id="6_dj4wq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kbehb"]
 texture = ExtResource("2_d5djh")
@@ -194,6 +196,18 @@ physics_layer_0/collision_mask = 8
 sources/2 = SubResource("TileSetAtlasSource_78k86")
 sources/3 = SubResource("TileSetAtlasSource_fkbwo")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_niitk"]
+size = Vector2(33, 16.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5djh"]
+size = Vector2(33, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0mew"]
+size = Vector2(31, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ok6xr"]
+size = Vector2(110, 17)
+
 [node name="Map_level2" type="Node2D" unique_id=511310519]
 
 [node name="Sunset" type="Sprite2D" parent="." unique_id=80733596]
@@ -209,3 +223,48 @@ collision_visibility_mode = 1
 [node name="Layer2" type="TileMapLayer" parent="." unique_id=1866812586]
 tile_map_data = PackedByteArray("AAAUABcAAgAAAAAAAAAVABcAAgAAAAAAAAAOABcAAgAAAAAAAAANABcAAgAAAAAAAAAHABcAAgAAAAAAAAAGABcAAgAAAAAAAABaACUAAgAAAAAAAABbACUAAgAAAAAAAABcACUAAgAAAAAAAABdACUAAgAAAAAAAABeACUAAgAAAAAAAABfACUAAgAAAAAAAABgACUAAgAAAAAAAAA/ACgAAwAAAAAAAAA+ACgAAwAAAAAAAAA9ACgAAwAAAAAAAAA8ACgAAwAAAAAAAAA7ACgAAwAAAAAAAAA6ACgAAwAAAAAAAAA5ACgAAwAAAAAAAAA4ACgAAwAAAAAAAAA3ACgAAwAAAAAAAAA2ACgAAwAAAAAAAAA1ACgAAwAAAAAAAAA0ACgAAwAAAAAAAAAzACgAAwAAAAAAAAAyACgAAwAAAAAAAAAxACgAAwAAAAAAAAAwACgAAwAAAAAAAAAvACgAAwAAAAAAAAAuACgAAwAAAAAAAAAtACgAAwAAAAAAAAAsACgAAwAAAAAAAAArACgAAwAAAAAAAAAqACgAAwAAAAAAAAApACgAAwAAAAAAAAAoACgAAwAAAAAAAAAnACgAAwAAAAAAAAAmACgAAwAAAAAAAAAlACgAAwAAAAAAAAAkACgAAwAAAAAAAAAjACgAAwAAAAAAAAAiACgAAwAAAAAAAAAhACgAAwAAAAAAAAAgACgAAwAAAAAAAAAfACgAAwAAAAAAAAAeACgAAwAAAAAAAAAdACgAAwAAAAAAAAAcACgAAwAAAAAAAAAbACgAAwAAAAAAAAAaACgAAwAAAAAAAAAaACkAAwAAAAAAAAAbACkAAwAAAAAAAAAcACkAAwAAAAAAAAAdACkAAwAAAAAAAAAeACkAAwAAAAAAAAAfACkAAwAAAAAAAAAgACkAAwAAAAAAAAAhACkAAwAAAAAAAAAiACkAAwAAAAAAAAAjACkAAwAAAAAAAAAkACkAAwAAAAAAAAAlACkAAwAAAAAAAAAmACkAAwAAAAAAAAAnACkAAwAAAAAAAAAoACkAAwAAAAAAAAApACkAAwAAAAAAAAAqACkAAwAAAAAAAAArACkAAwAAAAAAAAAsACkAAwAAAAAAAAAtACkAAwAAAAAAAAAuACkAAwAAAAAAAAAvACkAAwAAAAAAAAAwACkAAwAAAAAAAAAxACkAAwAAAAAAAAAyACkAAwAAAAAAAAAzACkAAwAAAAAAAAA0ACkAAwAAAAAAAAA1ACkAAwAAAAAAAAA2ACkAAwAAAAAAAAA3ACkAAwAAAAAAAAA4ACkAAwAAAAAAAAA5ACkAAwAAAAAAAAA6ACkAAwAAAAAAAAA7ACkAAwAAAAAAAAA8ACkAAwAAAAAAAAA9ACkAAwAAAAAAAAA+ACkAAwAAAAAAAAA/ACkAAwAAAAAAAAAaACoAAwAAAAAAAAAbACoAAwAAAAAAAAAcACoAAwAAAAAAAAAdACoAAwAAAAAAAAAeACoAAwAAAAAAAAAfACoAAwAAAAAAAAAgACoAAwAAAAAAAAAhACoAAwAAAAAAAAAiACoAAwAAAAAAAAAjACoAAwAAAAAAAAAkACoAAwAAAAAAAAAlACoAAwAAAAAAAAAmACoAAwAAAAAAAAAnACoAAwAAAAAAAAAoACoAAwAAAAAAAAApACoAAwAAAAAAAAAqACoAAwAAAAAAAAArACoAAwAAAAAAAAAsACoAAwAAAAAAAAAtACoAAwAAAAAAAAAuACoAAwAAAAAAAAAvACoAAwAAAAAAAAAwACoAAwAAAAAAAAAxACoAAwAAAAAAAAAyACoAAwAAAAAAAAAzACoAAwAAAAAAAAA0ACoAAwAAAAAAAAA1ACoAAwAAAAAAAAA2ACoAAwAAAAAAAAA3ACoAAwAAAAAAAAA4ACoAAwAAAAAAAAA5ACoAAwAAAAAAAAA6ACoAAwAAAAAAAAA7ACoAAwAAAAAAAAA8ACoAAwAAAAAAAAA9ACoAAwAAAAAAAAA+ACoAAwAAAAAAAAA/ACoAAwAAAAAAAAA=")
 tile_set = SubResource("TileSet_vyf2n")
+
+[node name="DamageSpikes" type="Area2D" parent="." unique_id=246709401]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageSpikes" unique_id=288640912]
+position = Vector2(335.5, 375.25)
+shape = SubResource("RectangleShape2D_niitk")
+debug_color = Color(0.99607843, 0, 0, 0.41960785)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DamageSpikes" unique_id=2036296159]
+position = Vector2(223.5, 375.5)
+shape = SubResource("RectangleShape2D_d5djh")
+debug_color = Color(0.99607843, 0, 0, 0.41960785)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="DamageSpikes" unique_id=1130067193]
+position = Vector2(112.5, 376)
+shape = SubResource("RectangleShape2D_k0mew")
+debug_color = Color(0.99215686, 0, 0, 0.41960785)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="DamageSpikes" unique_id=1739836210]
+position = Vector2(1496, 599)
+shape = SubResource("RectangleShape2D_ok6xr")
+debug_color = Color(0.99607843, 0, 0, 0.41960785)
+
+[node name="Fox" parent="." unique_id=1446437957 instance=ExtResource("5_ok6xr")]
+position = Vector2(985, 257)
+point_a = Vector2(985, 258)
+point_b = Vector2(1093, 258)
+
+[node name="Fox2" parent="." unique_id=1282676907 instance=ExtResource("5_ok6xr")]
+position = Vector2(1274, 162)
+point_a = Vector2(1274, 161)
+point_b = Vector2(1540, 161)
+
+[node name="Fox3" parent="." unique_id=362485154 instance=ExtResource("5_ok6xr")]
+position = Vector2(1564, 545)
+
+[node name="Frog" parent="." unique_id=916549686 instance=ExtResource("6_dj4wq")]
+position = Vector2(307, 377)
+point_a = Vector2(307, 376)
+point_b = Vector2(248, 376)
+
+[node name="Frog2" parent="." unique_id=1749773819 instance=ExtResource("6_dj4wq")]
+position = Vector2(725, 121)
+point_a = Vector2(725, 121)
+point_b = Vector2(599, 121)
