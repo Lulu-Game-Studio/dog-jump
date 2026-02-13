@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b4po8eq45lvdf" path="res://Tiles/Tiles-PixelAdventure/Other/Shadow.png" id="4_2r1tl"]
 [ext_resource type="PackedScene" uid="uid://dmki6nwadlyxa" path="res://Sprites/frog.tscn" id="5_dywbp"]
 [ext_resource type="PackedScene" uid="uid://2ahm3b3i74v" path="res://Sprites/fox.tscn" id="6_1seuy"]
+[ext_resource type="PackedScene" uid="uid://bgbqmedvq5ka" path="res://Sprites/dog_(player).tscn" id="7_2r1tl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s6urs"]
 texture = ExtResource("2_dywbp")
@@ -255,3 +256,6 @@ point_b = Vector2(1093, 146)
 position = Vector2(824, 598)
 shape = SubResource("RectangleShape2D_1seuy")
 debug_color = Color(0.99607843, 0, 0, 0.41960785)
+
+[node name="Dog (player)" parent="." unique_id=161018750 instance=ExtResource("7_2r1tl")]
+position = Vector2(378, 468)
