@@ -1,11 +1,17 @@
 [gd_scene format=4 uid="uid://c41jn0dy6ffd"]
 
+[ext_resource type="Script" uid="uid://c241yd5ri56ev" path="res://scenes/levels/level.gd" id="1_dj4wq"]
 [ext_resource type="Texture2D" uid="uid://bh73h43ljdibt" path="res://Tiles/Background/Sunset.jpg" id="1_niitk"]
-[ext_resource type="Texture2D" uid="uid://dtyt83pext6bq" path="res://Tiles/Tiles-PixelAdventure/Terrain/Terrain (16x16).png" id="2_d5djh"]
-[ext_resource type="Texture2D" uid="uid://bbrj4cual1gq2" path="res://Tiles/Tiles-PixelAdventure/Traps/Spikes/spike.png" id="3_ok6xr"]
-[ext_resource type="Texture2D" uid="uid://b4po8eq45lvdf" path="res://Tiles/Tiles-PixelAdventure/Other/Shadow.png" id="4_dj4wq"]
-[ext_resource type="PackedScene" uid="uid://2ahm3b3i74v" path="res://Sprites/fox.tscn" id="5_ok6xr"]
-[ext_resource type="PackedScene" uid="uid://dmki6nwadlyxa" path="res://Sprites/frog.tscn" id="6_dj4wq"]
+[ext_resource type="Texture2D" uid="uid://dtyt83pext6bq" path="res://Tiles/Terrain/Terrain (16x16).png" id="2_d5djh"]
+[ext_resource type="Texture2D" uid="uid://bbrj4cual1gq2" path="res://Tiles/Traps/Spikes/spike.png" id="3_ok6xr"]
+[ext_resource type="Texture2D" uid="uid://b4po8eq45lvdf" path="res://Tiles/Other/Shadow.png" id="4_dj4wq"]
+[ext_resource type="PackedScene" uid="uid://2ahm3b3i74v" path="res://Sprites/fox/fox.tscn" id="5_ok6xr"]
+[ext_resource type="PackedScene" uid="uid://dmki6nwadlyxa" path="res://Sprites/frog/frog.tscn" id="6_dj4wq"]
+[ext_resource type="PackedScene" uid="uid://cq41r6jrrcoy5" path="res://scenes/ui/pause/pause.tscn" id="8_b0vvs"]
+[ext_resource type="PackedScene" uid="uid://b8ltechdmqr3c" path="res://scenes/ui/winner/winner.tscn" id="9_oyk6k"]
+[ext_resource type="PackedScene" uid="uid://bnvvr0uww7mku" path="res://Sprites/coins/coin.tscn" id="10_gycjm"]
+[ext_resource type="PackedScene" uid="uid://ctm0totpbovl1" path="res://Sprites/stars/star.tscn" id="11_8i1lk"]
+[ext_resource type="PackedScene" uid="uid://bgbqmedvq5ka" path="res://Sprites/dog/dog.tscn" id="12_8i1lk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kbehb"]
 texture = ExtResource("2_d5djh")
@@ -209,6 +215,9 @@ size = Vector2(31, 16)
 size = Vector2(110, 17)
 
 [node name="Map_level2" type="Node2D" unique_id=511310519]
+script = ExtResource("1_dj4wq")
+level_id = "level2"
+next_level = "res://scenes/levels/level3.tscn"
 
 [node name="Sunset" type="Sprite2D" parent="." unique_id=80733596]
 position = Vector2(1144, 323)
@@ -224,7 +233,7 @@ collision_visibility_mode = 1
 tile_map_data = PackedByteArray("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")
 tile_set = SubResource("TileSet_vyf2n")
 
-[node name="DamageSpikes" type="Area2D" parent="." unique_id=246709401]
+[node name="DamageSpikes" type="Area2D" parent="." unique_id=246709401 groups=["spikes"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageSpikes" unique_id=288640912]
 position = Vector2(335.5, 375.25)
@@ -257,7 +266,9 @@ point_a = Vector2(1274, 161)
 point_b = Vector2(1540, 161)
 
 [node name="Fox3" parent="." unique_id=362485154 instance=ExtResource("5_ok6xr")]
-position = Vector2(1564, 545)
+position = Vector2(1564, 546)
+point_a = Vector2(1564, 546)
+point_b = Vector2(1874, 546)
 
 [node name="Frog" parent="." unique_id=916549686 instance=ExtResource("6_dj4wq")]
 position = Vector2(307, 377)
@@ -268,3 +279,34 @@ point_b = Vector2(248, 376)
 position = Vector2(725, 121)
 point_a = Vector2(725, 121)
 point_b = Vector2(599, 121)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=405558605]
+
+[node name="Pause" parent="CanvasLayer" unique_id=1919460839 instance=ExtResource("8_b0vvs")]
+visible = false
+
+[node name="Winner" parent="CanvasLayer" unique_id=1461534830 instance=ExtResource("9_oyk6k")]
+visible = false
+next_level_path = "res://scenes/levels/level3.tscn"
+next_level_number = 3
+
+[node name="Coin" parent="." unique_id=1654733540 instance=ExtResource("10_gycjm")]
+position = Vector2(149, 376)
+
+[node name="Coin2" parent="." unique_id=581168358 instance=ExtResource("10_gycjm")]
+position = Vector2(1538, 168)
+
+[node name="Coin3" parent="." unique_id=1933572880 instance=ExtResource("10_gycjm")]
+position = Vector2(1354, 546)
+
+[node name="Coin4" parent="." unique_id=1476968666 instance=ExtResource("10_gycjm")]
+position = Vector2(760, 357)
+
+[node name="Coin5" parent="." unique_id=1299839246 instance=ExtResource("10_gycjm")]
+position = Vector2(1710, 550)
+
+[node name="Star" parent="." unique_id=784933037 instance=ExtResource("11_8i1lk")]
+position = Vector2(2144, 233)
+
+[node name="Dog" parent="." unique_id=241278315 instance=ExtResource("12_8i1lk")]
+position = Vector2(210, 87)
