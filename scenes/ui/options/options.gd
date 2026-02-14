@@ -7,13 +7,17 @@ var is_fullscreen: bool = false
 func _ready() -> void:
 	var current_mode := DisplayServer.window_get_mode()
 	is_fullscreen = current_mode == DisplayServer.WINDOW_MODE_FULLSCREEN
-
 	_update_fullscreen_text()
 
-
 func _on_back_button_pressed() -> void:
-	queue_free()
-
+	var parent = get_parent()
+	if parent and parent.has_method("close"): 
+		queue_free()  
+	elif get_tree().current_scene.name == "menu" or get_tree().current_scene.name == "Menu": 
+		get_tree().change_scene_to_file("res://scenes/menu/menu.tscn")
+		queue_free()
+	else:
+		queue_free()
 
 func _on_full_screen_button_pressed() -> void:
 	is_fullscreen = !is_fullscreen
@@ -23,7 +27,6 @@ func _on_full_screen_button_pressed() -> void:
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	_update_fullscreen_text()
-
 
 func _update_fullscreen_text() -> void:
 	if is_fullscreen:

@@ -11,8 +11,9 @@ func _on_play_button_pressed() -> void:
 	get_tree().change_scene_to_packed(LEVEL_SELECT_SCENE)
 
 func _on_options_button_pressed() -> void:
-	var options_instance := OPTIONS_SCENE.instantiate()
-	get_tree().current_scene.add_child(options_instance)
+	var options_scene = preload("res://scenes/ui/options/options.tscn").instantiate()
+	add_child(options_scene)
+
 
 
 func _on_quit_button_pressed() -> void:

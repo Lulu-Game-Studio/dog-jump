@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://ctm0totpbovl1"]
+
+[ext_resource type="Script" uid="uid://bbvied6tovhhl" path="res://Sprites/stars/star.gd" id="1_4v7dp"]
+[ext_resource type="Texture2D" uid="uid://bav4o0f7pfrm2" path="res://Sprites/stars/starAnimation.png" id="1_46ao5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xbkik"]
+atlas = ExtResource("1_46ao5")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4v7dp"]
+atlas = ExtResource("1_46ao5")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5k1gg"]
+atlas = ExtResource("1_46ao5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0xay"]
+atlas = ExtResource("1_46ao5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xbkik"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xbkik")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4v7dp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5k1gg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0xay")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k045m"]
+radius = 5.0
+
+[node name="Star" type="Area2D" unique_id=784933037]
+script = ExtResource("1_4v7dp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=333181865]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_xbkik")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.95064837
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=231730697]
+shape = SubResource("CircleShape2D_k045m")
