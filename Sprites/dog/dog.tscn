@@ -270,7 +270,9 @@ texture_filter = 1
 position = Vector2(1, -0.9999981)
 scale = Vector2(0.23046875, 0.2578125)
 sprite_frames = SubResource("SpriteFrames_dq5mi")
-animation = &"Walk"
+animation = &"Bark"
+frame = 1
+frame_progress = 0.40826026
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=525133283]
 position = Vector2(1, 2)

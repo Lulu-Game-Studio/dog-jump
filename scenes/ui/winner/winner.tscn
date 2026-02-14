@@ -58,10 +58,13 @@ theme_override_fonts/font = ExtResource("1_2drh3")
 theme_override_font_sizes/font_size = 50
 text = "Next level"
 
-[node name="ReturnButton" type="Button" parent="Buttons" unique_id=1153694418]
+[node name="MenuButton" type="Button" parent="Buttons" unique_id=1153694418]
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_2drh3")
 theme_override_font_sizes/font_size = 50
 text = "menu
 "
+
+[connection signal="pressed" from="Buttons/NextLevelButton" to="." method="_on_next_level_button_pressed"]
+[connection signal="pressed" from="Buttons/MenuButton" to="." method="_on_return_button_pressed"]

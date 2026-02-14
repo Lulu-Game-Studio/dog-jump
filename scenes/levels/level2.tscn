@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://b4po8eq45lvdf" path="res://Tiles/Other/Shadow.png" id="4_dj4wq"]
 [ext_resource type="PackedScene" uid="uid://2ahm3b3i74v" path="res://Sprites/fox/fox.tscn" id="5_ok6xr"]
 [ext_resource type="PackedScene" uid="uid://dmki6nwadlyxa" path="res://Sprites/frog/frog.tscn" id="6_dj4wq"]
+[ext_resource type="PackedScene" uid="uid://cq41r6jrrcoy5" path="res://scenes/ui/pause/pause.tscn" id="8_b0vvs"]
+[ext_resource type="PackedScene" uid="uid://b8ltechdmqr3c" path="res://scenes/ui/winner/winner.tscn" id="9_oyk6k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kbehb"]
 texture = ExtResource("2_d5djh")
@@ -272,3 +274,13 @@ point_b = Vector2(248, 376)
 position = Vector2(725, 121)
 point_a = Vector2(725, 121)
 point_b = Vector2(599, 121)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=405558605]
+
+[node name="Pause" parent="CanvasLayer" unique_id=1919460839 instance=ExtResource("8_b0vvs")]
+visible = false
+
+[node name="Winner" parent="CanvasLayer" unique_id=1461534830 instance=ExtResource("9_oyk6k")]
+visible = false
+next_level_path = "res://scenes/levels/level3.tscn"
+next_level_number = 3
