@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cq41r6jrrcoy5"]
 
+[ext_resource type="Script" uid="uid://bawxwbt24idf7" path="res://scenes/ui/pause/pause.gd" id="1_ngokt"]
 [ext_resource type="FontFile" uid="uid://dxe7owqfwqgt3" path="res://letter/ARCADECLASSIC.TTF" id="1_p8xvd"]
 
 [node name="Pause" type="Control" unique_id=1919460839]
@@ -9,6 +10,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ngokt")
+metadata/_edit_use_anchors_ = true
 
 [node name="Background" type="ColorRect" parent="." unique_id=1454485414]
 layout_mode = 1
@@ -70,3 +73,7 @@ theme_override_fonts/font = ExtResource("1_p8xvd")
 theme_override_font_sizes/font_size = 50
 text = "menu
 "
+
+[connection signal="pressed" from="Buttons/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Buttons/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Buttons/ReturnButton" to="." method="_on_return_button_pressed"]
