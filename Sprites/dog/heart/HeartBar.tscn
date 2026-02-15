@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://d1sbcp1v44076"]
+
+[ext_resource type="Script" uid="uid://grfc5526w030" path="res://Sprites/dog/heart/heart_bar.gd" id="1_hwjyr"]
+[ext_resource type="Texture2D" uid="uid://crn83dvnygbrq" path="res://Sprites/dog/heart/heart.png" id="1_lerp4"]
+
+[node name="HeartBar" type="CanvasLayer" unique_id=1906480593]
+script = ExtResource("1_hwjyr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=554311904]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.000061
+offset_top = 1.9999999
+offset_right = 831.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.1060088, 0.11869275)
+
+[node name="Heart1" type="TextureRect" parent="HBoxContainer" unique_id=422390452]
+custom_minimum_size = Vector2(700, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_lerp4")
+expand_mode = 1
+
+[node name="Heart2" type="TextureRect" parent="HBoxContainer" unique_id=275621324]
+custom_minimum_size = Vector2(700, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_lerp4")
+expand_mode = 1
+
+[node name="Heart3" type="TextureRect" parent="HBoxContainer" unique_id=1809409545]
+custom_minimum_size = Vector2(700, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_lerp4")
+expand_mode = 1
