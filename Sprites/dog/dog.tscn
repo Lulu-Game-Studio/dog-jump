@@ -262,6 +262,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcds5"]
 size = Vector2(32, 27)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3lpk"]
+size = Vector2(35, 24)
+
 [node name="Dog" type="CharacterBody2D" unique_id=241278315 groups=["player"]]
 script = ExtResource("1_u2n4h")
 
@@ -288,3 +291,12 @@ limit_top = 0
 limit_right = 2288
 limit_bottom = 656
 limit_smoothed = true
+
+[node name="DamageArea" type="Area2D" parent="." unique_id=579796106]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea" unique_id=234002883]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_x3lpk")
+debug_color = Color(0.99215686, 0, 0, 0.41960785)
+
+[connection signal="area_entered" from="DamageArea" to="." method="_on_damage_area_entered"]

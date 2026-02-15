@@ -3,6 +3,22 @@
 [ext_resource type="Script" uid="uid://dj1lr7ul18r1u" path="res://Sprites/frog/frog.gd" id="1_p8t0i"]
 [ext_resource type="Texture2D" uid="uid://cfv68cn3343pc" path="res://Sprites/frog/frog_spritesheet.png" id="2_g5x0v"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4iyn"]
+atlas = ExtResource("2_g5x0v")
+region = Rect2(0, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j755"]
+atlas = ExtResource("2_g5x0v")
+region = Rect2(32, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt4ej"]
+atlas = ExtResource("2_g5x0v")
+region = Rect2(64, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06t37"]
+atlas = ExtResource("2_g5x0v")
+region = Rect2(96, 128, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_lwpea"]
 atlas = ExtResource("2_g5x0v")
 region = Rect2(0, 0, 32, 32)
@@ -27,24 +43,25 @@ region = Rect2(64, 64, 32, 32)
 atlas = ExtResource("2_g5x0v")
 region = Rect2(64, 96, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p4iyn"]
-atlas = ExtResource("2_g5x0v")
-region = Rect2(0, 128, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0j755"]
-atlas = ExtResource("2_g5x0v")
-region = Rect2(32, 128, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gt4ej"]
-atlas = ExtResource("2_g5x0v")
-region = Rect2(64, 128, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_06t37"]
-atlas = ExtResource("2_g5x0v")
-region = Rect2(96, 128, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_yakrr"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4iyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j755")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gt4ej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06t37")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lwpea")
@@ -75,23 +92,6 @@ animations = [{
 "loop": true,
 "name": &"Move (Jump)",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p4iyn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0j755")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gt4ej")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_06t37")
-}],
-"loop": true,
-"name": &"died",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71pkg"]
@@ -100,15 +100,14 @@ size = Vector2(17, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p8t0i"]
 size = Vector2(14, 2)
 
-[node name="Frog" type="CharacterBody2D" unique_id=916549686]
+[node name="Frog" type="CharacterBody2D" unique_id=916549686 groups=["enemy"]]
 script = ExtResource("1_p8t0i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=199219614]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_yakrr")
-animation = &"Move (Jump)"
+animation = &"Death"
 autoplay = "Idle"
-frame_progress = 0.56685597
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1878282293]
 position = Vector2(1.5, 1.5)

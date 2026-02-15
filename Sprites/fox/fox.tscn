@@ -130,7 +130,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_uvi1b")
 }],
 "loop": false,
-"name": &"Died",
+"name": &"Death",
 "speed": 5.0
 }, {
 "frames": [{
@@ -216,7 +216,7 @@ size = Vector2(30, 22.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_71yec"]
 size = Vector2(28, 2)
 
-[node name="Fox" type="CharacterBody2D" unique_id=1446437957]
+[node name="Fox" type="CharacterBody2D" unique_id=1446437957 groups=["enemy"]]
 script = ExtResource("1_71yec")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=856369118]
@@ -224,9 +224,8 @@ texture_filter = 1
 position = Vector2(-1, -9)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_yd78t")
-animation = &"Walk"
+animation = &"Death"
 autoplay = "Idle"
-frame_progress = 0.33754918
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=48747628]
 position = Vector2(0, 4.25)

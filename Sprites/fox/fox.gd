@@ -2,18 +2,24 @@ extends CharacterBody2D
 
 var damage = 1
 var objetive: Vector2 = Vector2.ZERO
+var is_moving = false
+var is_waiting = false
+var is_dying = false
+
 @export var point_a = Vector2.ZERO
 @export var point_b = Vector2.ZERO
 @export var SPEED = 50
 @export var wait_time = 1.5
-var is_moving = false
-var is_waiting = false
 
 func _ready():
 	objetive = point_b
 	start_moving()
+	add_to_group("enemy")
 
 func _physics_process(_delta):
+	if is_dying:
+		return
+		
 	if is_moving:
 		var direction_x = sign(objetive.x - position.x)
 		velocity.x = direction_x * SPEED
@@ -46,5 +52,14 @@ func start_moving():
 	is_moving = true
 	$AnimatedSprite2D.play("Walk")
 
-func _on_timer_timeout():
-	pass
+func die_by_stomp():
+	if is_dying:
+		return
+	
+	is_dying = true
+	is_moving = false
+	velocity = Vector2.ZERO
+	
+	$AnimatedSprite2D.play("Death")
+	await $AnimatedSprite2D.animation_finished
+	queue_free()
