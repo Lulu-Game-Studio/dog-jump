@@ -92,6 +92,7 @@ func die_by_stomp():
 	velocity = Vector2.ZERO
 	
 	anim.play("Dead")
+	$AudioStreamPlayer2D.play()
 	await anim.animation_finished
 	queue_free()
 
@@ -99,3 +100,4 @@ func play_damage_effect():
 	var tween = create_tween()
 	anim.modulate = Color.RED
 	tween.tween_property(anim, "modulate", Color.WHITE, 0.15)
+	$AudioStreamPlayer2D.play()

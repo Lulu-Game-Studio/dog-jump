@@ -8,6 +8,7 @@ const FALL_LIMIT := 668.0
 var barking := false
 var saved_pos: Vector2 = Vector2.ZERO
 var is_dead := false
+var jump_sound_played := false
 
 @export var max_life: int = 3
 @export var trap_damage: int = 1
@@ -22,10 +23,9 @@ var heart_bar: Node = null
 
 func _ready():
 	add_to_group("player")
-
+	$AnimatedSprite2D.frame_changed.connect(_on_frame_changed)
 	heart_bar = get_tree().current_scene.get_node_or_null("HeartBar")
 
-	# Ajusta vida al empezar
 	current_life = clamp(current_life, 0, max_life)
 	_update_hearts()
 
@@ -62,15 +62,16 @@ func _physics_process(delta):
 	else:
 		if velocity.y > 0:
 			velocity.y = 0
+		jump_sound_played = false
 
 	check_stomp_enemies()
 
 	var dir := Input.get_axis("move_left", "move_right")
 
-	if barking and (dir != 0 or Input.is_action_just_pressed("jump")):
+	if barking and dir != 0:
 		barking = false
 
-	if Input.is_action_just_pressed("bark") and not barking:
+	if Input.is_action_just_pressed("bark") and not barking and is_on_floor():
 		barking = true
 		anim.play("Bark")
 		velocity.x = 0
@@ -89,31 +90,43 @@ func _physics_process(delta):
 		else:
 			anim.play("Idle")
 	else:
+		velocity.x = 0
 		anim.play("Bark")
 
 	move_and_slide()
+
+func _on_frame_changed():
+	if anim.animation == "Bark" and anim.frame == 5:
+		$AudioStreamPlayer2D.play()
+	if anim.animation == "jump" and anim.frame == 1 and not jump_sound_played:
+		$AudioStreamPlayer2D2.play()
+		jump_sound_played = true
 
 func check_stomp_enemies():
 	if velocity.y <= 0:
 		return
 
 	var space_state = get_world_2d().direct_space_state
-	var query = PhysicsRayQueryParameters2D.create(
-		global_position,
-		global_position + Vector2(0, 20)
-	)
-	query.collide_with_areas = true
-	query.collide_with_bodies = false
-
-	var result = space_state.intersect_ray(query)
-
-	if result:
-		var collider = result.collider
-		if collider is Area2D:
-			var enemy = collider.get_parent()
-			if enemy and enemy.is_in_group("enemy") and enemy.has_method("die_by_stomp"):
-				enemy.die_by_stomp()
-				velocity.y = JUMP_FORCE * 0.7
+	var offsets = [-10, 0, 10]
+	
+	for offset in offsets:
+		var query = PhysicsRayQueryParameters2D.create(
+			global_position + Vector2(offset, 0),
+			global_position + Vector2(offset, 20)
+		)
+		query.collide_with_areas = true
+		query.collide_with_bodies = false
+		
+		var result = space_state.intersect_ray(query)
+		
+		if result:
+			var collider = result.collider
+			if collider is Area2D:
+				var enemy = collider.get_parent()
+				if enemy and enemy.is_in_group("enemy") and enemy.has_method("die_by_stomp"):
+					enemy.die_by_stomp()
+					velocity.y = JUMP_FORCE * 0.7
+					return
 
 func _on_anim_finished():
 	if anim.animation == "Bark":
