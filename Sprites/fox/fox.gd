@@ -75,10 +75,8 @@ func die_by_stomp():
 	$AudioStreamPlayer2D.play()
 	$AnimatedSprite2D.play("Death")
 	
-	# Esperar a que AMBAS terminen (en paralelo, no en secuencia)
 	await $AnimatedSprite2D.animation_finished
 	
-	# Si el audio sigue sonando, esperar a que termine
 	while $AudioStreamPlayer2D.playing:
 		await get_tree().process_frame
 	
