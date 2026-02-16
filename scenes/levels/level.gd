@@ -8,20 +8,19 @@ extends Node2D
 @onready var star: Area2D = $Star
 @onready var winner: Control = $CanvasLayer/Winner
 @onready var loser: Control = $CanvasLayer/Loser
+@onready var coin_audio: AudioStreamPlayer2D = $CoinAudioPlayer
 
 var cat: Node = null
-
 var total_coins: int = 0
 var collected_coins: int = 0
 
 func _ready() -> void:
 	add_to_group("game_manager")
-
 	cat = get_node_or_null("Cat")
-
+	$Background.play()
 	if dog and dog.has_method("restore_position"):
 		dog.restore_position()
-
+	
 	_setup_coins()
 	_setup_star()
 	_setup_cat()
@@ -30,12 +29,12 @@ func _setup_coins() -> void:
 	var coins := get_tree().get_nodes_in_group("coin")
 	total_coins = coins.size()
 	collected_coins = 0
-
+	
 	for c in coins:
 		if c.has_signal("coin_collected"):
 			if not c.coin_collected.is_connected(_on_coin_collected):
 				c.coin_collected.connect(_on_coin_collected)
-
+	
 	if total_coins == 0:
 		_show_star()
 
@@ -60,6 +59,10 @@ func toggle_pause() -> void:
 
 func _on_coin_collected() -> void:
 	collected_coins += 1
+	
+	if coin_audio:
+		coin_audio.play()
+	
 	if collected_coins >= total_coins:
 		_show_star()
 

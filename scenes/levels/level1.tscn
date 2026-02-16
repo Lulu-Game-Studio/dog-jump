@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://ctm0totpbovl1" path="res://Sprites/stars/star.tscn" id="10_nkeig"]
 [ext_resource type="PackedScene" uid="uid://bnvvr0uww7mku" path="res://Sprites/coins/coin.tscn" id="11_nfihu"]
 [ext_resource type="PackedScene" uid="uid://d1sbcp1v44076" path="res://Sprites/dog/heart/HeartBar.tscn" id="14_jprdt"]
+[ext_resource type="AudioStream" uid="uid://yfpqfpxv5a1f" path="res://Sound/coin.wav" id="15_ps2vj"]
+[ext_resource type="AudioStream" uid="uid://hlgpbyc6nhvv" path="res://Sound/BackgroundSound.mp3" id="16_sbmf2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_s6urs"]
 texture = ExtResource("2_dywbp")
@@ -303,3 +305,16 @@ point_b = Vector2(888, 521)
 SPEED = 80
 
 [node name="HeartBar" parent="." unique_id=1906480593 instance=ExtResource("14_jprdt")]
+
+[node name="CoinAudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=2036273418]
+stream = ExtResource("15_ps2vj")
+max_distance = 10000.0
+attenuation = 0.0
+panning_strength = 0.0
+
+[node name="Background" type="AudioStreamPlayer2D" parent="." unique_id=1712051706]
+stream = ExtResource("16_sbmf2")
+autoplay = true
+max_distance = 100000.0
+attenuation = 0.0
+panning_strength = 0.0

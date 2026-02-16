@@ -14,6 +14,8 @@
 [ext_resource type="PackedScene" uid="uid://ctm0totpbovl1" path="res://Sprites/stars/star.tscn" id="11_8i1lk"]
 [ext_resource type="PackedScene" uid="uid://bgbqmedvq5ka" path="res://Sprites/dog/dog.tscn" id="12_8i1lk"]
 [ext_resource type="PackedScene" uid="uid://d1sbcp1v44076" path="res://Sprites/dog/heart/HeartBar.tscn" id="14_b4tpv"]
+[ext_resource type="AudioStream" uid="uid://yfpqfpxv5a1f" path="res://Sound/coin.wav" id="15_hkuam"]
+[ext_resource type="AudioStream" uid="uid://hlgpbyc6nhvv" path="res://Sound/BackgroundSound.mp3" id="16_f3b2k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kbehb"]
 texture = ExtResource("2_d5djh")
@@ -309,7 +311,7 @@ position = Vector2(1354, 546)
 position = Vector2(760, 357)
 
 [node name="Coin5" parent="." unique_id=1299839246 instance=ExtResource("10_gycjm")]
-position = Vector2(1710, 550)
+position = Vector2(1675, 553)
 
 [node name="Star" parent="." unique_id=784933037 instance=ExtResource("11_8i1lk")]
 position = Vector2(2144, 233)
@@ -318,3 +320,16 @@ position = Vector2(2144, 233)
 position = Vector2(210, 87)
 
 [node name="HeartBar" parent="." unique_id=1906480593 instance=ExtResource("14_b4tpv")]
+
+[node name="CoinAudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=470559645]
+stream = ExtResource("15_hkuam")
+max_distance = 10000.0
+attenuation = 0.0
+panning_strength = 0.0
+
+[node name="Background" type="AudioStreamPlayer2D" parent="." unique_id=1617376574]
+stream = ExtResource("16_f3b2k")
+autoplay = true
+max_distance = 100000.0
+attenuation = 0.0
+panning_strength = 0.0
