@@ -105,7 +105,7 @@ func _on_frame_changed():
 func check_stomp_enemies():
 	if velocity.y <= 0:
 		return
-	
+
 	var space_state = get_world_2d().direct_space_state
 	var offsets = [-10, 0, 10]
 	
