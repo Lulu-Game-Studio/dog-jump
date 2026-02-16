@@ -290,7 +290,7 @@ _data = {
 position = Vector2(0, 23)
 shape = SubResource("RectangleShape2D_cngdl")
 
-[node name="FireArea" type="Area2D" parent="." unique_id=35041765]
+[node name="FireArea" type="Area2D" parent="." unique_id=35041765 groups=["fire"]]
 collision_mask = 255
 script = ExtResource("2_n5wif")
 
