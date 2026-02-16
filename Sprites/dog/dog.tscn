@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dutrb63w7tpc1" path="res://Sprites/dog/poopsprite.png" id="3_rwgg1"]
 [ext_resource type="Texture2D" uid="uid://bd0w6hchcniqp" path="res://Sprites/dog/walksprite.png" id="4_kcds5"]
 [ext_resource type="Texture2D" uid="uid://djquj46yqj3ji" path="res://Sprites/dog/jumpsprite.png" id="6_x3lpk"]
+[ext_resource type="AudioStream" uid="uid://dp6myargvpqu2" path="res://Sound/Dog Bark 2.wav" id="7_q0syl"]
+[ext_resource type="AudioStream" uid="uid://cgnckaecbsmir" path="res://Sound/Jump.wav" id="8_4blny"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kcds5"]
 atlas = ExtResource("1_k142p")
@@ -273,9 +275,7 @@ texture_filter = 1
 position = Vector2(1, -0.9999981)
 scale = Vector2(0.23046875, 0.2578125)
 sprite_frames = SubResource("SpriteFrames_dq5mi")
-animation = &"Bark"
-frame = 1
-frame_progress = 0.40826026
+animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=525133283]
 position = Vector2(1, 2)
@@ -298,5 +298,11 @@ limit_smoothed = true
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_x3lpk")
 debug_color = Color(0.99215686, 0, 0, 0.41960785)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=390836466]
+stream = ExtResource("7_q0syl")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="." unique_id=1315129571]
+stream = ExtResource("8_4blny")
 
 [connection signal="area_entered" from="DamageArea" to="." method="_on_damage_area_entered"]

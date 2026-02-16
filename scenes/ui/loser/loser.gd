@@ -1,6 +1,5 @@
 extends Control
 
-@export var current_level_path := "res://scenes/levels/level1.tscn"
 
 func _ready():
 	visible = false
@@ -12,7 +11,7 @@ func show_lose():
 
 func _on_retry_button_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file(current_level_path)
+	get_tree().reload_current_scene()
 
 func _on_menu_button_pressed() -> void:
 	get_tree().paused = false

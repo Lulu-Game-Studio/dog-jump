@@ -8,13 +8,10 @@ func _ready() -> void:
 	_update_buttons()
 
 func _update_buttons() -> void:
-	# Level 1 siempre desbloqueado
 	level1_button.disabled = false
 
-	# Level 2 solo si max_level_unlocked >= 2
 	level2_button.disabled = LevelProgress.max_level_unlocked < 2
 
-	# Level 3 solo si max_level_unlocked >= 3
 	level3_button.disabled = LevelProgress.max_level_unlocked < 3
 
 

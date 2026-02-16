@@ -1,6 +1,27 @@
 [gd_scene format=3 uid="uid://bsm02jbvvwxmt"]
 
+[ext_resource type="Script" uid="uid://c77boicrtfa6x" path="res://Sprites/cat/cat.gd" id="1_5cfk2"]
 [ext_resource type="Texture2D" uid="uid://dk1ynw27g6a2k" path="res://Sprites/cat/cat_Sprite.png" id="1_o407w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o407w"]
+atlas = ExtResource("1_o407w")
+region = Rect2(0, 544, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cfk2"]
+atlas = ExtResource("1_o407w")
+region = Rect2(32, 544, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2kcn"]
+atlas = ExtResource("1_o407w")
+region = Rect2(64, 544, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0jhe"]
+atlas = ExtResource("1_o407w")
+region = Rect2(96, 544, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ado8"]
+atlas = ExtResource("1_o407w")
+region = Rect2(128, 544, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6pcxy"]
 atlas = ExtResource("1_o407w")
@@ -98,28 +119,28 @@ region = Rect2(704, 96, 32, 32)
 atlas = ExtResource("1_o407w")
 region = Rect2(736, 96, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o407w"]
-atlas = ExtResource("1_o407w")
-region = Rect2(0, 544, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5cfk2"]
-atlas = ExtResource("1_o407w")
-region = Rect2(32, 544, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b2kcn"]
-atlas = ExtResource("1_o407w")
-region = Rect2(64, 544, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y0jhe"]
-atlas = ExtResource("1_o407w")
-region = Rect2(96, 544, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ado8"]
-atlas = ExtResource("1_o407w")
-region = Rect2(128, 544, 32, 32)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_7gg1a"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o407w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5cfk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2kcn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0jhe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ado8")
+}],
+"loop": false,
+"name": &"Dead",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_6pcxy")
@@ -206,42 +227,36 @@ animations = [{
 "loop": true,
 "name": &"Walk",
 "speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_o407w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5cfk2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b2kcn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y0jhe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7ado8")
-}],
-"loop": true,
-"name": &"died",
-"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5g4t"]
-size = Vector2(26.5, 20)
+size = Vector2(33, 23)
 
-[node name="Cat" type="CharacterBody2D" unique_id=1192035046]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b2kcn"]
+size = Vector2(32.75, 1.625)
+
+[node name="Cat" type="CharacterBody2D" unique_id=1192035046 groups=["enemy"]]
 position = Vector2(620, 324)
+script = ExtResource("1_5cfk2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=623819875]
 texture_filter = 1
-position = Vector2(-620, -324)
+position = Vector2(-616, -327.5)
+scale = Vector2(1.25, 1.21875)
 sprite_frames = SubResource("SpriteFrames_7gg1a")
-animation = &"died"
+animation = &"Dead"
 autoplay = "Idle"
-frame_progress = 0.990449
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=928352169]
-position = Vector2(-620, -324)
+position = Vector2(-612.5, -328.5)
 shape = SubResource("RectangleShape2D_b5g4t")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1965409648]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=214554278]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1682482880]
+position = Vector2(-612.375, -341)
+shape = SubResource("RectangleShape2D_b2kcn")
+
+[node name="Timer" type="Timer" parent="." unique_id=1480681369]
