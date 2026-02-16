@@ -319,6 +319,7 @@ position = Vector2(936, 142)
 
 [node name="Background" type="AudioStreamPlayer2D" parent="." unique_id=1341334414]
 stream = ExtResource("16_sbmf2")
+volume_db = 10.0
 autoplay = true
 max_distance = 10000.0
 attenuation = 0.0

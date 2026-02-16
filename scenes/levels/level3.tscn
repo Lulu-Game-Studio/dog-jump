@@ -259,6 +259,7 @@ panning_strength = 0.0
 
 [node name="CoinAudioPlayer" type="AudioStreamPlayer2D" parent="." unique_id=496847607]
 stream = ExtResource("14_522sc")
+volume_db = 10.0
 max_distance = 10000.0
 attenuation = 0.0
 panning_strength = 0.0

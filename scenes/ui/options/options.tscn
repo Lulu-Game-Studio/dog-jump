@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dfr4i57hlm1vq" path="res://scenes/ui/options/sound.png" id="2_3hhku"]
 [ext_resource type="PackedScene" uid="uid://cdaifmewx80m6" path="res://scenes/ui/Background/Background.tscn" id="2_gmey6"]
 [ext_resource type="Texture2D" uid="uid://c7exwu077nx2g" path="res://scenes/ui/buttons/buttonNormal.png" id="5_0vh43"]
+[ext_resource type="Script" uid="uid://4suhe2eroe3h" path="res://scenes/ui/options/music_volume_slider.gd" id="5_upcpd"]
 [ext_resource type="Texture2D" uid="uid://b4nnbem6ek735" path="res://scenes/ui/buttons/buttonHover.png" id="6_un27u"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_3hhku"]
@@ -89,6 +90,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxLine_7u8vf")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_7u8vf")
 max_value = 1.0
 step = 0.1
+script = ExtResource("5_upcpd")
 
 [node name="FullScreenButton" type="Button" parent="BoxOptions" unique_id=654815939]
 texture_filter = 1
@@ -118,5 +120,6 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_r8yej")
 theme_override_styles/hover = SubResource("StyleBoxTexture_r8yej")
 text = "Back "
 
+[connection signal="value_changed" from="BoxOptions/HBoxContainer/MusicVolumeSlider" to="BoxOptions/HBoxContainer/MusicVolumeSlider" method="_on_value_changed"]
 [connection signal="pressed" from="BoxOptions/FullScreenButton" to="." method="_on_full_screen_button_pressed"]
 [connection signal="pressed" from="BoxOptions/BackButton" to="." method="_on_back_button_pressed"]
