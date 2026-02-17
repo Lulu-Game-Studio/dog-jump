@@ -3,6 +3,50 @@
 [ext_resource type="FontFile" uid="uid://dxe7owqfwqgt3" path="res://letter/ARCADECLASSIC.TTF" id="1_klgdb"]
 [ext_resource type="Script" uid="uid://dvxgfnojay4v0" path="res://scenes/menu/menu.gd" id="1_mcvr8"]
 [ext_resource type="PackedScene" uid="uid://cdaifmewx80m6" path="res://scenes/ui/Background/Background.tscn" id="2_e0arn"]
+[ext_resource type="Texture2D" uid="uid://c7exwu077nx2g" path="res://scenes/ui/buttons/buttonNormal.png" id="4_037ec"]
+[ext_resource type="Texture2D" uid="uid://b4nnbem6ek735" path="res://scenes/ui/buttons/buttonHover.png" id="5_y1o0p"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y1o0p"]
+texture = ExtResource("4_037ec")
+expand_margin_left = 10.0
+expand_margin_top = 40.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t0a87"]
+texture = ExtResource("5_y1o0p")
+expand_margin_left = 10.0
+expand_margin_top = 40.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8yej"]
+texture = ExtResource("5_y1o0p")
+expand_margin_left = 10.0
+expand_margin_top = 40.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3y2rt"]
+texture = ExtResource("4_037ec")
+expand_margin_left = 10.0
+expand_margin_top = 40.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qo0fc"]
+texture = ExtResource("4_037ec")
+expand_margin_left = 10.0
+expand_margin_top = 40.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f2fum"]
+texture = ExtResource("5_y1o0p")
+expand_margin_left = 10.0
+expand_margin_top = 40.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k48pe"]
+texture = ExtResource("5_y1o0p")
+expand_margin_left = 10.0
+expand_margin_top = 40.0
+expand_margin_right = 10.0
 
 [node name="Menu" type="Control" unique_id=139446426]
 layout_mode = 3
@@ -19,10 +63,9 @@ metadata/_edit_use_anchors_ = true
 [node name="TitleLabel" type="Label" parent="." unique_id=850075646]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0017361111
-anchor_top = -0.043209877
-anchor_right = 1.0002639
-anchor_bottom = 0.95679015
+anchor_top = -0.090277776
+anchor_right = 1.0020001
+anchor_bottom = 0.9097222
 offset_top = 67.0
 offset_right = -0.30407715
 offset_bottom = -378.0
@@ -39,36 +82,54 @@ metadata/_edit_use_anchors_ = true
 [node name="ButtonsContainer" type="VBoxContainer" parent="." unique_id=2011309504]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.29947916
-anchor_top = 0.46141976
-anchor_right = 0.6927083
-anchor_bottom = 0.8634259
+anchor_left = 0.30094042
+anchor_top = 0.42152777
+anchor_right = 0.6941696
+anchor_bottom = 0.8590278
 offset_top = 2.5
 offset_bottom = -2.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 50
 metadata/_edit_use_anchors_ = true
 
 [node name="PlayButton" type="Button" parent="ButtonsContainer" unique_id=962442134]
+texture_filter = 1
 custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_klgdb")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_y1o0p")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_t0a87")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r8yej")
 text = "PLAY"
 
 [node name="OptionsButton" type="Button" parent="ButtonsContainer" unique_id=696152608]
+texture_filter = 1
 custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_klgdb")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_3y2rt")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_t0a87")
+theme_override_styles/hover = SubResource("StyleBoxTexture_t0a87")
 text = "Options"
 
 [node name="QuitButton" type="Button" parent="ButtonsContainer" unique_id=628268929]
+texture_filter = 1
 custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_klgdb")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_qo0fc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_f2fum")
+theme_override_styles/hover = SubResource("StyleBoxTexture_k48pe")
 text = "Quit
 "
 

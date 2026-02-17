@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cuvb4i64aimv1"]
+
+[ext_resource type="Script" uid="uid://bnctttib2dfh3" path="res://scenes/ui/CountCoins/countcoins.gd" id="1_qxko6"]
+[ext_resource type="FontFile" uid="uid://dxe7owqfwqgt3" path="res://letter/ARCADECLASSIC.TTF" id="2_ksekl"]
+
+[node name="Countcoins" type="CanvasLayer" unique_id=1976930461]
+script = ExtResource("1_qxko6")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=620880900]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -588.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1674623821]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="CoinLabel" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2079379456]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_ksekl")
+theme_override_font_sizes/font_size = 70
+text = "Coins : 0"
+
+[node name="StarMessage" type="Label" parent="MarginContainer/VBoxContainer" unique_id=810371451]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("2_ksekl")
+theme_override_font_sizes/font_size = 70

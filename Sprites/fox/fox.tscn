@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://duvyb6pk0rwtm" path="res://Sprites/fox/fox.gd" id="1_71yec"]
 [ext_resource type="Texture2D" uid="uid://cpgv0xm534o7t" path="res://Sprites/fox/Fox_Sprite.png" id="1_kpck0"]
+[ext_resource type="AudioStream" uid="uid://k860x8l18nah" path="res://Sound/EnemyDie.wav" id="3_ievdc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jvn3t"]
 atlas = ExtResource("1_kpck0")
@@ -224,8 +225,7 @@ texture_filter = 1
 position = Vector2(-1, -9)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_yd78t")
-animation = &"Death"
-autoplay = "Idle"
+animation = &"Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=48747628]
 position = Vector2(0, 4.25)
@@ -237,3 +237,6 @@ shape = SubResource("RectangleShape2D_5u6l4")
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_71yec")
 debug_color = Color(0.99215686, 0, 0, 0.41960785)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1623827950]
+stream = ExtResource("3_ievdc")

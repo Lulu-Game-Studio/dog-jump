@@ -2,6 +2,32 @@
 
 [ext_resource type="Script" uid="uid://bawxwbt24idf7" path="res://scenes/ui/pause/pause.gd" id="1_ngokt"]
 [ext_resource type="FontFile" uid="uid://dxe7owqfwqgt3" path="res://letter/ARCADECLASSIC.TTF" id="1_p8xvd"]
+[ext_resource type="Texture2D" uid="uid://c7exwu077nx2g" path="res://scenes/ui/buttons/buttonNormal.png" id="3_1lama"]
+[ext_resource type="Texture2D" uid="uid://b4nnbem6ek735" path="res://scenes/ui/buttons/buttonHover.png" id="4_0oakk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t0a87"]
+texture = ExtResource("3_1lama")
+expand_margin_left = 10.0
+expand_margin_top = 40.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8yej"]
+texture = ExtResource("4_0oakk")
+expand_margin_left = 10.0
+expand_margin_top = 40.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gudbu"]
+texture = ExtResource("4_0oakk")
+expand_margin_left = 10.0
+expand_margin_top = 40.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0oakk"]
+texture = ExtResource("3_1lama")
+expand_margin_left = 10.0
+expand_margin_top = 40.0
+expand_margin_right = 10.0
 
 [node name="Pause" type="Control" unique_id=1919460839]
 layout_mode = 3
@@ -27,10 +53,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = 56.0
-offset_right = 1.0
-offset_bottom = -387.0
+offset_left = -1.0
+offset_top = -4.0
+offset_right = -1.0
+offset_bottom = -447.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_p8xvd")
@@ -45,32 +71,53 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 414.0
-offset_top = 287.0
+offset_top = 312.0
 offset_right = -438.0
-offset_bottom = -141.0
+offset_bottom = -116.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 50
 
 [node name="ResumeButton" type="Button" parent="Buttons" unique_id=1116096431]
+texture_filter = 1
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_p8xvd")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_t0a87")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r8yej")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r8yej")
 text = "Resume"
 
 [node name="OptionsButton" type="Button" parent="Buttons" unique_id=669895330]
+texture_filter = 1
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_p8xvd")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_t0a87")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gudbu")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r8yej")
 text = "Options"
 
 [node name="ReturnButton" type="Button" parent="Buttons" unique_id=1153694418]
+texture_filter = 1
 custom_minimum_size = Vector2(300, 60)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_p8xvd")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_0oakk")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r8yej")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r8yej")
 text = "menu
 "
 

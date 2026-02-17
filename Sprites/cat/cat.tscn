@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c77boicrtfa6x" path="res://Sprites/cat/cat.gd" id="1_5cfk2"]
 [ext_resource type="Texture2D" uid="uid://dk1ynw27g6a2k" path="res://Sprites/cat/cat_Sprite.png" id="1_o407w"]
+[ext_resource type="AudioStream" uid="uid://k860x8l18nah" path="res://Sound/EnemyDie.wav" id="3_b2kcn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o407w"]
 atlas = ExtResource("1_o407w")
@@ -260,3 +261,6 @@ position = Vector2(-612.375, -341)
 shape = SubResource("RectangleShape2D_b2kcn")
 
 [node name="Timer" type="Timer" parent="." unique_id=1480681369]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=254840092]
+stream = ExtResource("3_b2kcn")

@@ -3,6 +3,20 @@
 [ext_resource type="PackedScene" uid="uid://cdaifmewx80m6" path="res://scenes/ui/Background/Background.tscn" id="1_rf3b5"]
 [ext_resource type="Script" uid="uid://bgcue82dkypr3" path="res://scenes/menu/level_select.gd" id="1_vs7y7"]
 [ext_resource type="FontFile" uid="uid://dxe7owqfwqgt3" path="res://letter/ARCADECLASSIC.TTF" id="2_5lyxr"]
+[ext_resource type="Texture2D" uid="uid://c7exwu077nx2g" path="res://scenes/ui/buttons/buttonNormal.png" id="4_h2otk"]
+[ext_resource type="Texture2D" uid="uid://b4nnbem6ek735" path="res://scenes/ui/buttons/buttonHover.png" id="5_4ligt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6vk0w"]
+texture = ExtResource("4_h2otk")
+expand_margin_left = 10.0
+expand_margin_top = 40.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r8yej"]
+texture = ExtResource("5_4ligt")
+expand_margin_left = 10.0
+expand_margin_top = 40.0
+expand_margin_right = 10.0
 
 [node name="LevelSelect" type="Control" unique_id=74509697]
 layout_mode = 3
@@ -35,32 +49,51 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -35.0
-offset_right = 150.0
-offset_bottom = 35.0
+offset_left = -245.0
+offset_top = -91.0
+offset_right = 258.0
+offset_bottom = 219.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 50
 
 [node name="Level1Button" type="Button" parent="VBoxContainer" unique_id=114115532]
 custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5lyxr")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_6vk0w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r8yej")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r8yej")
 text = "Level 1"
 
 [node name="Level2Button" type="Button" parent="VBoxContainer" unique_id=1779416235]
 custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5lyxr")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_6vk0w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r8yej")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r8yej")
 text = "Level 2"
 
 [node name="Level3Button" type="Button" parent="VBoxContainer" unique_id=1519039669]
 custom_minimum_size = Vector2(300, 70)
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_5lyxr")
 theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_6vk0w")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_r8yej")
+theme_override_styles/hover = SubResource("StyleBoxTexture_r8yej")
 text = "Level 3"
 
 [connection signal="pressed" from="VBoxContainer/Level1Button" to="." method="_on_level_1_button_pressed"]
